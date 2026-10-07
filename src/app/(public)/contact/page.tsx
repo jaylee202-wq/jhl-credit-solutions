@@ -106,6 +106,7 @@ export default function ContactPage() {
   return (
     <Container className="py-12 lg:py-20">
       <SectionHeading
+        as="h1"
         title="Contact Us"
         subtitle="Have a question? We'd love to hear from you. Reach out and our team will respond as soon as possible."
       />

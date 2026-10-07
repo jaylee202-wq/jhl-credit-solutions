@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SITE } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `Privacy Policy for ${SITE.name}.`,
+export const metadata = {
+  ...createPageMetadata({
+    path: "/privacy",
+    title: "Privacy Policy",
+    description: `Privacy Policy for ${SITE.name}. Learn how we collect, use, and protect information on our public website.`,
+  }),
   robots: { index: true, follow: true },
 };
 

@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SITE } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/disclosures",
   title: "Disclosures",
   description: `Public consumer disclosures and credit rights information for ${SITE.name}.`,
-};
+});
 
 export default function DisclosuresPage() {
   return (

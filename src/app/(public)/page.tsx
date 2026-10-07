@@ -1,16 +1,18 @@
-import type { Metadata } from "next";
 import { VideoHeroPlaceholder } from "@/components/hero/VideoHeroPlaceholder";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { SITE } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/",
   title: "Home",
+  absoluteTitle: `${SITE.name} | Credit Restoration and Credit Education`,
   description:
     "Take control of your credit journey. JHL Credit Solutions provides credit restoration and credit education to help you build a stronger financial future.",
-};
+});
 
 const VALUE_PROPS = [
   {

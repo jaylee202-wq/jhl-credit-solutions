@@ -1,19 +1,21 @@
-import type { Metadata } from "next";
 import { CreditAssessmentForm } from "@/components/forms/CreditAssessmentForm";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/get-started",
   title: "Get Started",
   description:
     "Begin your free credit assessment with JHL Credit Solutions. No payment or sensitive information required.",
-};
+});
 
 export default function GetStartedPage() {
   return (
     <Container className="py-12 lg:py-20">
       <SectionHeading
+        as="h1"
         title="Start Your Credit Assessment"
         subtitle="Tell us about your credit goals and concerns. This initial assessment is free, requires no payment, and helps us understand whether we may be able to assist you."
       />

@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SITE } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/terms",
   title: "Terms of Service",
   description: `Website Terms of Service for ${SITE.name}.`,
-};
+});
 
 export default function TermsPage() {
   return (

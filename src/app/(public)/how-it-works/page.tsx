@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/how-it-works",
   title: "How It Works",
   description:
     "Learn how the JHL Credit Solutions process works — from initial assessment through ongoing support.",
-};
+});
 
 const STEPS = [
   {
@@ -52,6 +53,7 @@ export default function HowItWorksPage() {
   return (
     <Container className="py-12 lg:py-20">
       <SectionHeading
+        as="h1"
         title="How It Works"
         subtitle="A transparent, step-by-step approach to understanding your credit and exploring appropriate service options."
       />

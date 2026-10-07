@@ -54,6 +54,7 @@ export default function FAQPage() {
   return (
     <Container className="py-12 lg:py-20">
       <SectionHeading
+        as="h1"
         title="Frequently Asked Questions"
         subtitle="Common questions about our services, process, and what to expect."
       />

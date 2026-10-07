@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { SITE } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/about",
   title: "About",
   description: `Learn about ${SITE.name} — our mission, values, and commitment to helping consumers navigate their credit journey.`,
-};
+});
 
 const VALUES = [
   {
@@ -37,6 +38,7 @@ export default function AboutPage() {
   return (
     <Container className="py-12 lg:py-20">
       <SectionHeading
+        as="h1"
         title={`About ${SITE.name}`}
         subtitle="Helping consumers better understand their credit and take meaningful steps toward a stronger financial future."
       />

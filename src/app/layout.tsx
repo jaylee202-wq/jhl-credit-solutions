@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
 import { SITE } from "@/lib/constants";
+import { SITE_DESCRIPTION, SOCIAL_PREVIEW_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,15 +17,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const SITE_TITLE = `${SITE.name} | ${SITE.tagline}`;
-const SITE_DESCRIPTION =
-  "Personalized credit restoration and credit education services designed to help you understand your credit, address inaccuracies, and work toward stronger financial opportunities.";
-const SOCIAL_PREVIEW_IMAGE = {
-  url: "/images/jhl-credit-solutions-social-preview.png",
-  width: 1200,
-  height: 630,
-  alt: "JHL Credit Solutions — Building Credit. Creating Opportunities.",
-} as const;
+const SITE_TITLE = `${SITE.name} | Credit Restoration and Credit Education`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -32,9 +26,6 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE_DESCRIPTION,
-  alternates: {
-    canonical: SITE.url,
-  },
   keywords: [
     "credit restoration",
     "credit education",
@@ -42,19 +33,16 @@ export const metadata: Metadata = {
     "financial literacy",
     "credit solutions",
   ],
+  // Shared defaults only — page-specific title/description/canonical/url
+  // are set via createPageMetadata() on each public route.
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE.url,
     siteName: SITE.name,
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
     images: [SOCIAL_PREVIEW_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
     images: [SOCIAL_PREVIEW_IMAGE.url],
   },
   robots: {
@@ -70,6 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <OrganizationJsonLd />
         {children}
       </body>
     </html>

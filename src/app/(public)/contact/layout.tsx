@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
-import { SITE } from "@/lib/constants";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/contact",
   title: "Contact",
-  description: `Contact ${SITE.name}. Reach out with questions about our credit restoration and education services.`,
-};
+  description:
+    "Contact JHL Credit Solutions. Reach out with questions about our credit restoration and education services.",
+});
 
 export default function ContactLayout({
   children,

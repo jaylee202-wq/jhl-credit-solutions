@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  path: "/services",
   title: "Services",
   description:
     "Explore credit assessment, education, and restoration coordination services from JHL Credit Solutions.",
-};
+});
 
 const SERVICES = [
   {
@@ -52,6 +53,7 @@ export default function ServicesPage() {
   return (
     <Container className="py-12 lg:py-20">
       <SectionHeading
+        as="h1"
         title="Our Services"
         subtitle="Credit assessment, education, and restoration coordination services designed to help you understand your credit and explore appropriate next steps."
       />
