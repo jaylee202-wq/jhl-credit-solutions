@@ -3,8 +3,8 @@ export const SITE = {
   tagline: "Building Credit. Creating Opportunities.",
   domain: "jhlcreditsolutions.com",
   email: "hello@jhlcreditsolutions.com",
-  // Primary production URL (apex permanently redirects to www)
-  url: "https://www.jhlcreditsolutions.com",
+  // Official company website used for metadata, canonicals, and Open Graph
+  url: "https://jhlcreditsolutions.com",
 } as const;
 
 export const NAV_LINKS = [

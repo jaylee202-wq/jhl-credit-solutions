@@ -77,17 +77,38 @@ export function createPageMetadata(options: {
   };
 }
 
-/** Organization JSON-LD using only facts published on the live site. */
+/** Official company website (Organization identity). */
+export const ORGANIZATION_URL = "https://jhlcreditsolutions.com";
+
+/** Founder personal site — Person URL only, never the company website. */
+export const FOUNDER = {
+  name: "Jay Hunter Lee",
+  jobTitle: "Founder & CEO",
+  url: "https://jayhunterlee.com",
+} as const;
+
+/**
+ * Single Organization JSON-LD for the site.
+ * Company website stays on jhlcreditsolutions.com; founder Person uses
+ * jayhunterlee.com. Does not invent certifications, ratings, or social profiles.
+ */
 export function getOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE.name,
-    url: SITE.url,
+    legalName: "JHL Credit Solutions, LLC",
+    url: ORGANIZATION_URL,
     email: SITE.email,
     description: SITE_DESCRIPTION,
     slogan: SITE.tagline,
-    logo: absoluteUrl("/images/logo.png"),
+    logo: `${ORGANIZATION_URL}/images/logo.png`,
+    founder: {
+      "@type": "Person",
+      name: FOUNDER.name,
+      url: FOUNDER.url,
+      jobTitle: FOUNDER.jobTitle,
+    },
     address: {
       "@type": "PostalAddress",
       name: "Business Mailing Address",

@@ -48,7 +48,7 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-sm">
             <Image
               src="/images/Jay_Hunter_Lee_Founder_2.png"
-              alt="Jay Hunter Lee, Founder of JHL Credit Solutions"
+              alt="Jay Hunter Lee, Founder & CEO of JHL Credit Solutions"
               width={1023}
               height={1537}
               className="h-auto w-full"
@@ -67,26 +67,27 @@ export default function AboutPage() {
               Jay Hunter Lee
             </h2>
             <p className="mt-2 text-lg font-medium text-navy-light">
-              Founder, {SITE.name}
+              Founder &amp; CEO
             </p>
             <div className="mt-4 h-0.5 w-16 bg-gold" aria-hidden="true" />
           </div>
 
           <div className="space-y-6 text-muted leading-relaxed">
             <p>
-              {SITE.name} is a consumer credit restoration and credit education
-              company dedicated to helping individuals navigate the complexities of
-              credit. We believe that understanding your credit profile is one of
-              the most important steps you can take toward financial opportunity.
+              Jay Hunter Lee is the Founder and Chief Executive Officer of JHL
+              Credit Solutions, a Florida-based credit education and credit
+              services company helping consumers better understand their credit
+              profiles and take informed steps toward stronger financial
+              opportunities.
             </p>
             <p>
               Credit affects where you live, what you drive, what you pay in
-              interest, and even employment opportunities in some cases. JHL
-              helps consumers understand their credit, assess their situation,
-              determine appropriate options, and coordinate professional
-              credit-restoration assistance when appropriate — all while
-              providing the education needed to make informed decisions going
-              forward.
+              interest, and even employment opportunities in some cases. Under
+              Jay&apos;s leadership, {SITE.name} helps consumers understand their
+              credit, assess their situation, determine appropriate options, and
+              coordinate professional credit-restoration assistance when
+              appropriate — all while providing the education needed to make
+              informed decisions going forward.
             </p>
             <p>
               We are committed to operating ethically, in compliance with
